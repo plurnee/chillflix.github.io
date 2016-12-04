@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movies</title>
+    
+	<link rel="stylesheet" type="text/css" href="css/header.css" />      
+    <link rel="stylesheet" type="text/css" href="css/bodyStyle.css" />
+</head>
+
+<body>
+    <div id="wrapper">	                       
+        <header>
+            <a href="home_page.html"><image id="logo" src="chillFlixFinalBanner.png" /></a>
+        </header>
+        <nav>   
+            <ul class="main_menu">
+                <li><a href="home_page.html">Home</a></li>
+                <li><a href="movies_page.html">Movies</a></li>
+                <li><a href="next_picture.html">Next Picture</a></li>
+                <li><a href="about_page.html">About</a></li>
+            </ul>            
+        </nav>
+    </div>
+    
+    <table align="center">
+        <tr style="color:white;">
+            <th>Schedules</th>
+            <th>Movies</th>
+            <th>Payment</th>
+        </tr>
+        <tr>
+            <td>8AM - 10AM</td>
+            <td>10/20/16 - 12/15/16</td>
+            <td>Credit Card</td>
+        </tr>
+        <tr style="color:white;">
+            <td></td>
+              <td id="td-one"><a onclick="fort()">FORTITUDE: A BROMANCE GONE WRONG</a></td>
+            <td><img src="images/credit_lg.jpg" style="width:250px; height:50px;" onclick="credit()" /></td>
+        </tr>
+        <tr>
+            <td>1PM - 3PM</td>
+            <td>10/20/16 - 12/15/16</td>
+            <td>PayPal</td>
+        </tr>
+        <tr style="color:white;">
+            <td></td>
+              <td id="td-two"><a onclick="ww()">WONDER WOMAN</a></td>
+            <td><img src="images/paypal.png" style="width:250px; height:50px;" onclick="paypal()" /></td>
+        </tr>
+        <tr>
+            <td>6PM - 8PM</td>
+            <td>10/20/16 - 12/15/16</td>
+            <td>LBC</td>
+        </tr>
+        <tr style="color:white;">
+            <td></td>
+              <td id="td-three"><a onclick="jl()">JUSTICE LEAGUE</a></td>
+            <td><img src="images/lbc.jpg" style="width:100px; height:50px;" onclick="lbc()" /></td>
+        </tr>
+    </table>
+    
+    <!-- ============================================================ -->
+    <script type="text/javascript">
+        function logout()
+        {
+            var conf = confirm("Are you sure you want to logout?");
+            if(conf == true)
+                {
+                    window.location = 'index.html';
+                }
+        }
+        
+        function fort()
+        {
+            var conf = confirm("Note: Once you press okay, you will not be able to change your movie. Proceed?");
+            var td2 = document.getElementById("td-two");
+            
+            if(conf == true)
+                {
+                    td2.visible = false;
+                }
+        }
+        
+        function ww()
+        {
+            alert("WW");
+        }
+        
+        function jl()
+        {
+            alert("JL");
+        }
+        
+        function credit()
+        {
+            var conf = confirm("Proceed with the payment?");
+            if(conf == true)
+                {
+                    window.location = 'movie_one.html';
+                }
+        }
+        
+        function paypal()
+        {
+            var conf = confirm("Proceed with the payment?");
+            if(conf == true)
+                {
+                    window.location = 'movie_two.html';
+                }
+        }
+        
+        function lbc()
+        {
+            var conf = confirm("Proceed with the payment?");
+            if(conf == true)
+                {
+                    window.location = 'movie_three.html';
+                }
+        }
+    </script>
+    <!-- ============================================================ -->
+    
+    <footer align="middle" style="color:white;">
+        <br /><br /><br /><br /><br />
+        <input id="btn-logout" type="submit" value="LOGOUT" onclick="logout()" /><br /><br /><br />
+        plurnee™
+    </footer>
+</body>
+</html>

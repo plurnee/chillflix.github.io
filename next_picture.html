@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Next Picture</title>
+    
+	<link rel="stylesheet" type="text/css" href="css/header.css" />      
+    <link rel="stylesheet" type="text/css" href="css/bodyStyle.css" />
+</head>
+
+<body>
+    <div id="wrapper">	                       
+        <header>
+            <a href="home_page.html"><image id="logo" src="chillFlixFinalBanner.png" /></a>
+        </header>
+        <nav>   
+            <ul class="main_menu">
+                <li><a href="home_page.html">Home</a></li>
+                <li><a href="movies_page.html">Movies</a></li>
+                <li><a href="next_picture.html">Next Picture</a></li>
+                <li><a href="about_page.html">About</a></li>
+            </ul>            
+        </nav>
+    </div>
+        
+    <table align="center">
+        <tr style="color:white;">
+            <th>Synopsis</th>
+            <th>Movies</th>
+    
+        </tr>
+        <tr style="color:black;">
+            <td>Set in the future, Logan and Professor Charles Xavier must cope with the loss of the X-Men when a corporation led by Nathaniel Essex is destroying the world leaving it to destruction, with Logan's healing abilities slowly fading away and Xavier's Alzheimer's forcing him to forget. Logan must defeat Nathaniel Essex with the help of a young girl named Laura Kinney, a female clone of Wolverine.
+            </td>
+            <td><img src="images/logan.jpg" style="width:400px; height:200px;">
+            </td>
+        </tr>
+        <tr style="color:white;">
+            <td>A continuation of Fifty Shades of Grey; While Christian wrestles with his inner demons, Anastasia must confront the anger and envy of the women who came before her.
+            </td>
+            <td><img src="images/50shades_darker.jpg" style="width:400px; height:200px;">
+            </td>
+        </tr>
+        <tr style="color:black;">
+            <td>Xander Cage is left for dead after an incident, though he secretly returns to action for a new, tough assignment with his handler Augustus Gibbons.
+            </td>
+            <td><img src="images/xxx.jpg" style="width:400px; height:200px;">
+            </td>
+        </tr>
+        <tr style="color:white;">
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    
+    <!-- ============================================================ -->
+    <script type="text/javascript">
+        function logout()
+        {
+            var conf = confirm("Are you sure you want to logout?");
+            if(conf == true)
+                {
+                    window.location = 'index.html';
+                }
+        }
+    </script>
+    <!-- ============================================================ -->
+    
+    <footer align="middle" style="color:white;">
+        <br />
+        <input id="btn-logout" type="submit" value="LOGOUT" onclick="logout()" /><br /><br /><br />
+        plurnee™
+    </footer>
+</body>
+</html>

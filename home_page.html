@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chillflix</title>
+    
+	<link rel="stylesheet" type="text/css" href="css/header.css" />      
+    <link rel="stylesheet" type="text/css" href="css/bodyStyle.css" />
+</head>
+
+<body>
+    
+    <div id="wrapper">
+        <header>
+            <a href="home_page.html"><image id="logo" src="chillFlixFinalBanner.png" /></a>
+        </header>
+        <nav>   
+            <ul class="main_menu">
+                <li><a href="home_page.html">Home</a></li>
+                <li><a href="movies_page.html">Movies</a></li>
+                <li><a href="next_picture.html">Next Picture</a></li>
+                <li><a href="about_page.html">About</a></li>
+            </ul>            
+        </nav>
+    </div>
+    
+    <table align="center">
+        <tr style="color:white;">
+            <th>Synopsis</th>
+            <th>Movies</th>
+    
+        </tr>
+        <tr style="color:black;">
+            <td>Fortitude: A Bromance Gone Wrong<br />
+                An Upcoming Film based  on a true
+                story of four male friends who would
+                later develop from friendship into a
+                relationship
+            </td>
+            <td><img src="images/2.jpg" style="width:400px; height:200px;">
+            </td>
+        </tr>
+        <tr style="color:white;">
+            <td>WonderWoman<br />
+                Based on the popular DC Comics
+                WonderWoman's adventures came
+                to life from first meeting Steve Trevor
+                the American Pilot on her island of
+                Amazonians, to leaving off to help
+                fight World War I
+            </td>
+            <td><img src="images/Wonder%20Woman.jpg" style="width:400px; height:200px;">
+            </td>
+    
+        </tr>
+        <tr style="color:black;">
+            <td>Justice League<br />
+                Months After the events of Batman v Superman, Inspired by Superman's
+                sacrifice for humanity, Batman and
+                WonderWoman assembled a team of
+                popular DC Heroes to face the 
+                catastrophic threat of Steppenwolf
+                and the Parademons who are on the
+                hunt for Three Mother Boxes on Earth
+            </td>
+            <td><img src="images/Justice%20League.jpg" style="width:400px; height:200px;">
+            </td>
+        </tr>
+        <tr style="color:white;">
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    
+    <!-- ============================================================ -->
+    <script type="text/javascript">
+        function logout()
+        {
+            var conf = confirm("Are you sure you want to logout?");
+            if(conf == true)
+                {
+                    window.location = 'index.html';
+                }
+        }
+    </script>
+    <!-- ============================================================ -->
+    
+    <footer align="middle" style="color:white;">
+        <br />
+        <input id="btn-logout" type="submit" value="LOGOUT" onclick="logout()" /><br /><br /><br />
+        plurnee™
+    </footer>
+    
+</body>
+</html>
