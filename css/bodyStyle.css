@@ -90,6 +90,13 @@ input[type="text"], input[type="password"], input[type="number"] {
     font-size: 18px;
 }
 
+#label-two {
+    color: #fff;
+    font-size: 18px;
+    margin-top: 20px;
+    font-size: 25px;
+}
+
 #btn-logout {  
     padding: 10px 25px;
     color: #fff;
@@ -117,11 +124,11 @@ input[type="text"], input[type="password"], input[type="number"] {
 }
 
 #vid-one {
-    width: 800px;
+    width: 1000px;
     height: 500px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
+    margin-bottom: 10px;
 }
 
 .label-one {
