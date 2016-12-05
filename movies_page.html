@@ -29,34 +29,76 @@
             <th>Payment</th>
         </tr>
         <tr>
-            <td>8AM - 10AM</td>
+            <td>
+            </td>
             <td>10/20/16 - 12/15/16</td>
             <td>Credit Card</td>
         </tr>
         <tr style="color:white;">
-            <td></td>
-              <td id="td-one"><a onclick="fort()">FORTITUDE: A BROMANCE GONE WRONG</a></td>
-            <td><img src="images/credit_lg.jpg" style="width:250px; height:50px;" onclick="credit()" /></td>
+            <td>             
+            </td>
+            <td>
+                <input class="chk" id="chk4" type="checkbox" />
+                <label class="label-one" for="chk4">FORTITUDE: A BROMANCE GONE WRONG</label>
+            </td>
+            <td>
+                <a>
+                <img id="credit" src="images/credit_lg.jpg" style="width:250px; height:50px;" onclick="creditPayment()" /></a><br/>
+                <input id="text1" type="text" hidden="hidden" placeholder="Enter Credit Card No." />
+            </td>
         </tr>
         <tr>
-            <td>1PM - 3PM</td>
+            <td></td>
             <td>10/20/16 - 12/15/16</td>
             <td>PayPal</td>
         </tr>
         <tr style="color:white;">
-            <td></td>
-              <td id="td-two"><a onclick="ww()">WONDER WOMAN</a></td>
-            <td><img src="images/paypal.png" style="width:250px; height:50px;" onclick="paypal()" /></td>
+            <td>
+                <input class="chk" id="chk1" type="checkbox" />
+                <label class="label-one" for="chk1">8AM - 10AM</label>
+                <br /><br />
+                <input class="chk" id="chk2" type="checkbox" />
+                <label class="label-one" for="chk2">1PM - 3PM</label>
+                <br /><br />
+                <input class="chk" id="chk3" type="checkbox" />
+                <label class="label-one" for="chk3">6PM - 8PM</label>
+            </td>
+            <td>
+                <input class="chk" id="chk5" type="checkbox" />
+                <label class="label-one" for="chk5">WONDER WOMAN
+                </label>
+            </td>
+            <td>
+                <a>
+                <img id="paypal" src="images/paypal.png" style="width:250px; height:50px;" onclick="paypalPayment()" /></a><br/>
+                <input id="text2" type="text" hidden="hidden" placeholder="Enter Account Number" />
+            </td>
         </tr>
         <tr>
-            <td>6PM - 8PM</td>
+            <td></td>
             <td>10/20/16 - 12/15/16</td>
             <td>LBC</td>
         </tr>
         <tr style="color:white;">
+            <td>
+            </td>
+            <td>
+                <input class="chk" id="chk6" type="checkbox" />
+                <label class="label-one" for="chk6">JUSTICE LEAGUE
+                </label>
+            </td>
+            <td>   
+                <a>
+                <img id="lbc" src="images/lbc.jpg" style="cursor:pointer; width:100px; height:50px;" onclick="lbcPayment()" /></a><br/>
+                <input id="text3" type="text" hidden="hidden" placeholder="Enter Account Number"/>
+            </td>
+        </tr>
+        <tr>
             <td></td>
-              <td id="td-three"><a onclick="jl()">JUSTICE LEAGUE</a></td>
-            <td><img src="images/lbc.jpg" style="width:100px; height:50px;" onclick="lbc()" /></td>
+            <td>
+                <input class="btn" type="submit" onclick="submitButton()" value="SUBMIT">
+            </td>
+            <td></td>
         </tr>
     </table>
     
@@ -64,60 +106,340 @@
     <script type="text/javascript">
         function logout()
         {
-            var conf = confirm("Are you sure you want to logout?");
-            if(conf == true)
+            if(confirm("Are you sure you want to logout?") == true)
                 {
                     window.location = 'index.html';
                 }
         }
         
-        function fort()
+        function creditPayment()
         {
-            var conf = confirm("Note: Once you press okay, you will not be able to change your movie. Proceed?");
-            var td2 = document.getElementById("td-two");
+            var txt1 = document.getElementById(text1);
+            var txt2 = document.getElementById(text2);
+            var txt3 = document.getElementById(text3);
             
-            if(conf == true)
+            text1.style.display = "inline-block";
+            text2.style.display = "none";
+            text3.style.display = "none";
+        }
+        
+        function paypalPayment()
+        {
+            var txt1 = document.getElementById(text1);
+            var txt2 = document.getElementById(text2);
+            var txt3 = document.getElementById(text3);
+            
+            text1.style.display = "none";
+            text2.style.display = "inline-block";
+            text3.style.display = "none";
+        }
+        
+        function lbcPayment()
+        {
+            var txt1 = document.getElementById(text1);
+            var txt2 = document.getElementById(text2);
+            var txt3 = document.getElementById(text3);
+            
+            text1.style.display = "none";
+            text2.style.display = "none";
+            text3.style.display = "inline-block";
+        }
+        
+        
+        function submitButton()
+        {
+            var check1 = document.getElementById("chk1");
+            var check2 = document.getElementById("chk2");
+            var check3 = document.getElementById("chk3");
+            var movie1 = document.getElementById("chk4");
+            var movie2 = document.getElementById("chk5");
+            var movie3 = document.getElementById("chk6");
+            
+            if(check1.checked)
                 {
-                    td2.visible = false;
+                    if(check2.checked || check3.checked)
+                        {
+                            alert("Please select only one schedule.");
+                        }
+                    else
+                        {
+                            if(movie1.checked)
+                                {
+                                    if(movie2.checked || movie3.checked)
+                                        {
+                                            alert("Please select only one movie.");
+                                        }
+                                    else
+                                        {
+                                            if(text1.value.length == 16 || text2.value.length == 11 || text3.value.length == 9)
+                                                {
+                                                    text1.value = "";
+                                                    text2.value = "";
+                                                    text3.value = "";
+                                                    
+                                                    var conf = confirm("Procced with your payment?");
+                                                    
+                                                    if(conf == true)
+                                                        {
+                                                            alert("Thank you for your payment, click okay and enjoy your movie!");
+                                                            window.location = 'movie_two.html';
+                                                        }
+                                                }
+                                            else
+                                                {
+                                                    alert("Please enter your payment information.");
+                                                }
+                                        }
+                                }
+                            else if(movie2.checked)
+                                {
+                                    if(movie1.checked || movie3.checked)
+                                        {
+                                            alert("Please select only one movie.");
+                                        }
+                                    else
+                                        {
+                                            if(text1.value.length == 16 || text2.value.length == 11 || text3.value.length == 9)
+                                                {
+                                                    text1.value = "";
+                                                    text2.value = "";
+                                                    text3.value = "";
+                                                    
+                                                    var conf = confirm("Procced with your payment?");
+                                                    
+                                                    if(conf == true)
+                                                        {
+                                                            alert("Thank you for your payment, click okay and enjoy your movie!");
+                                                            window.location = 'movie_two.html';
+                                                        }
+                                                }
+                                            else
+                                                {
+                                                    alert("Please enter your payment information.");
+                                                }
+                                        }
+                                }
+                            else if(movie3.checked)
+                                {
+                                    if(movie1.checked || movie2.checked)
+                                        {
+                                            alert("Please select only one movie.");
+                                        }
+                                    else
+                                        {
+                                            if(text1.value.length == 16 || text2.value.length == 11 || text3.value.length == 9)
+                                                {
+                                                    text1.value = "";
+                                                    text2.value = "";
+                                                    text3.value = "";
+                                                    
+                                                    var conf = confirm("Procced with your payment?");
+                                                    
+                                                    if(conf == true)
+                                                        {
+                                                            alert("Thank you for your payment, click okay and enjoy your movie!");
+                                                            window.location = 'movie_two.html';
+                                                        }
+                                                }
+                                            else
+                                                {
+                                                    alert("Please enter your payment information.");
+                                                }
+                                        }
+                                }
+                        }
+                }
+            
+            else if(check2.checked)
+                {
+                    if(check1.checked || check3.checked)
+                        {
+                            alert("Please select only one schedule.");
+                        }
+                    else
+                        {
+                            if(movie1.checked)
+                                {
+                                    if(movie2.checked || movie3.checked)
+                                        {
+                                            alert("Please select only one movie.");
+                                        }
+                                    else
+                                        {
+                                            if(text1.value.length == 16 || text2.value.length == 11 || text3.value.length == 9)
+                                                {
+                                                    text1.value = "";
+                                                    text2.value = "";
+                                                    text3.value = "";
+                                                    
+                                                    var conf = confirm("Procced with your payment?");
+                                                    
+                                                    if(conf == true)
+                                                        {
+                                                            alert("Thank you for your payment, click okay and enjoy your movie!");
+                                                            window.location = 'movie_two.html';
+                                                        }
+                                                }
+                                            else
+                                                {
+                                                    alert("Please enter your payment information.");
+                                                }
+                                        }
+                                }
+                            else if(movie2.checked)
+                                {
+                                    if(movie1.checked || movie3.checked)
+                                        {
+                                            alert("Please select only one movie.");
+                                        }
+                                    else
+                                        {
+                                            if(text1.value.length == 16 || text2.value.length == 11 || text3.value.length == 9)
+                                                {
+                                                    text1.value = "";
+                                                    text2.value = "";
+                                                    text3.value = "";
+                                                    
+                                                    var conf = confirm("Procced with your payment?");
+                                                    
+                                                    if(conf == true)
+                                                        {
+                                                            alert("Thank you for your payment, click okay and enjoy your movie!");
+                                                            window.location = 'movie_two.html';
+                                                        }
+                                                }
+                                            else
+                                                {
+                                                    alert("Please enter your payment information.");
+                                                }
+                                        }
+                                }
+                            else if(movie3.checked)
+                                {
+                                    if(movie1.checked || movie2.checked)
+                                        {
+                                            alert("Please select only one movie.");
+                                        }
+                                    else
+                                        {
+                                            if(text1.value.length == 16 || text2.value.length == 11 || text3.value.length == 9)
+                                                {
+                                                    text1.value = "";
+                                                    text2.value = "";
+                                                    text3.value = "";
+                                                    
+                                                    var conf = confirm("Procced with your payment?");
+                                                    
+                                                    if(conf == true)
+                                                        {
+                                                            alert("Thank you for your payment, click okay and enjoy your movie!");
+                                                            window.location = 'movie_two.html';
+                                                        }
+                                                }
+                                            else
+                                                {
+                                                    alert("Please enter your payment information.");
+                                                }
+                                        }
+                                }
+                        }
+                }
+            else if(check3.checked)
+                {
+                    if(check1.checked || check2.checked)
+                        {
+                            alert("Please select only one schedule.");
+                        }
+                    else
+                        {
+                            if(movie1.checked)
+                                {
+                                    if(movie2.checked || movie3.checked)
+                                        {
+                                            alert("Please select only one movie.");
+                                        }
+                                    else
+                                        {
+                                            if(text1.value.length == 16 || text2.value.length == 11 || text3.value.length == 9)
+                                                {
+                                                    text1.value = "";
+                                                    text2.value = "";
+                                                    text3.value = "";
+                                                    
+                                                    var conf = confirm("Procced with your payment?");
+                                                    
+                                                    if(conf == true)
+                                                        {
+                                                            alert("Thank you for your payment, click okay and enjoy your movie!");
+                                                            window.location = 'movie_two.html';
+                                                        }
+                                                }
+                                            else
+                                                {
+                                                    alert("Please enter your payment information.");
+                                                }
+                                        }
+                                }
+                            else if(movie2.checked)
+                                {
+                                    if(movie1.checked || movie3.checked)
+                                        {
+                                            alert("Please select only one movie.");
+                                        }
+                                    else
+                                        {
+                                            if(text1.value.length == 16 || text2.value.length == 11 || text3.value.length == 9)
+                                                {
+                                                    text1.value = "";
+                                                    text2.value = "";
+                                                    text3.value = "";
+                                                    
+                                                    var conf = confirm("Procced with your payment?");
+                                                    
+                                                    if(conf == true)
+                                                        {
+                                                            alert("Thank you for your payment, click okay and enjoy your movie!");
+                                                            window.location = 'movie_two.html';
+                                                        }
+                                                }
+                                            else
+                                                {
+                                                    alert("Please enter your payment information.");
+                                                }
+                                        }
+                                }
+                            else if(movie3.checked)
+                                {
+                                    if(movie1.checked || movie2.checked)
+                                        {
+                                            alert("Please select only one movie.");
+                                        }
+                                    else
+                                        {
+                                            if(text1.value.length == 16 || text2.value.length == 11 || text3.value.length == 9)
+                                                {
+                                                    text1.value = "";
+                                                    text2.value = "";
+                                                    text3.value = "";
+                                                    
+                                                    var conf = confirm("Procced with your payment?");
+                                                    
+                                                    if(conf == true)
+                                                        {
+                                                            alert("Thank you for your payment, click okay and enjoy your movie!");
+                                                            window.location = 'movie_two.html';
+                                                        }
+                                                }
+                                            else
+                                                {
+                                                    alert("Please enter your payment information.");
+                                                }
+                                        }
+                                }
+                        }
                 }
         }
         
-        function ww()
-        {
-            alert("WW");
-        }
-        
-        function jl()
-        {
-            alert("JL");
-        }
-        
-        function credit()
-        {
-            var conf = confirm("Proceed with the payment?");
-            if(conf == true)
-                {
-                    window.location = 'movie_one.html';
-                }
-        }
-        
-        function paypal()
-        {
-            var conf = confirm("Proceed with the payment?");
-            if(conf == true)
-                {
-                    window.location = 'movie_two.html';
-                }
-        }
-        
-        function lbc()
-        {
-            var conf = confirm("Proceed with the payment?");
-            if(conf == true)
-                {
-                    window.location = 'movie_three.html';
-                }
-        }
     </script>
     <!-- ============================================================ -->
     
