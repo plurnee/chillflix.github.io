@@ -64,7 +64,7 @@ tr:nth-child(even) {
     margin-top: 50px;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], input[type="number"] {
     height: 25px;
     width: 200px;
     font-size: 18px;
