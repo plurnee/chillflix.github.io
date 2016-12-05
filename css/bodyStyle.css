@@ -128,7 +128,6 @@ input[type="text"], input[type="password"], input[type="number"] {
     height: 500px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 10px;
 }
 
 .label-one {
