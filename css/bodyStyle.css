@@ -124,6 +124,24 @@ input[type="text"], input[type="password"] {
     margin-top: 50px;
 }
 
+.label-one {
+    font-size: 20px;
+    padding: 5px;
+}
+
+.label-one:hover {
+    cursor: pointer;
+    box-shadow: 10px 10px 5px #000000;
+}
+
+.chk {
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+}
+
+/* ====================================================================== */
+
 @import url(http://fonts.googleapis.com/css?family=Varela+Round);
 
 .slides {
