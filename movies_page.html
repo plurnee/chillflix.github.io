@@ -44,7 +44,7 @@
             <td>
                 <a>
                 <img id="credit" src="images/credit_lg.jpg" style="width:250px; height:50px;" onclick="creditPayment()" /></a><br/>
-                <input id="text1" type="text" hidden="hidden" placeholder="Enter Credit Card No." />
+                <input id="text1" type="number" hidden="hidden" placeholder="Enter Credit Card No." />
             </td>
         </tr>
         <tr>
@@ -71,7 +71,7 @@
             <td>
                 <a>
                 <img id="paypal" src="images/paypal.png" style="width:250px; height:50px;" onclick="paypalPayment()" /></a><br/>
-                <input id="text2" type="text" hidden="hidden" placeholder="Enter Account Number" />
+                <input id="text2" type="number" hidden="hidden" placeholder="Enter Account Number" />
             </td>
         </tr>
         <tr>
@@ -90,7 +90,7 @@
             <td>   
                 <a>
                 <img id="lbc" src="images/lbc.jpg" style="cursor:pointer; width:100px; height:50px;" onclick="lbcPayment()" /></a><br/>
-                <input id="text3" type="text" hidden="hidden" placeholder="Enter Account Number"/>
+                <input id="text3" type="number" hidden="hidden" textmode="number" placeholder="Enter Account Number"/>
             </td>
         </tr>
         <tr>
@@ -344,6 +344,7 @@
                                 }
                         }
                 }
+            
             else if(check3.checked)
                 {
                     if(check1.checked || check2.checked)
@@ -436,10 +437,14 @@
                                                 }
                                         }
                                 }
+                            else
+                                {
+                                    alert("Please select a schedule/movie.");
+                                }
                         }
                 }
-		
-		else
+            
+            else
                 {
                     alert("Please select a schedule/movie.");
                 }
